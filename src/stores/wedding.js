@@ -1,13 +1,5 @@
 import { defineStore } from 'pinia'
 
-/**
- * Everything that is not plain text is edited here: names, date, venues,
- * schedule times, hotels, image and video paths.
- * The texts themselves (titles, sentences, FAQ...) are in src/content/fr.js and en.js.
- *
- * Replace the dummy images in /public/images and the video in /public/media
- * (keep the file names, or change the paths below).
- */
 export const useWeddingStore = defineStore('wedding', {
   state: () => ({
     partnerA: 'Annick',
@@ -17,16 +9,13 @@ export const useWeddingStore = defineStore('wedding', {
     dateISO: '2027-06-19T17:00:00+02:00',
     timeZone: 'Europe/Rome',
 
-    // 'fr', 'en' or 'it': the language shown first
-    defaultLang: 'fr',
+    defaultLang: 'en',
 
-    // Set to false to skip the opening envelope
     showIntro: true,
 
     hashtag: '#AnnickEWalter',
     rsvpDeadlineISO: '2027-05-08T12:00:00+02:00',
 
-    // Maximum number of people one reply can cover (the guest picker stops here)
     maxGuests: 2,
 
     // RSVP replies are POSTed here as JSON (Formspree, Google Apps Script, your API...).
@@ -34,10 +23,10 @@ export const useWeddingStore = defineStore('wedding', {
     rsvpEndpoint: '',
 
     images: {
-      hero: '/images/hero-couple.svg',
+      hero: '/images/hero-couple.jpg',
       dateStrip: '/images/date-strip.svg',
       filmPoster: '/images/film-poster.svg',
-      end: '/images/end-couple.svg'
+      end: '/images/end-couple.jpg'
     },
 
     // The video of the couple. Replace the file or point this to a hosted .mp4
@@ -48,22 +37,22 @@ export const useWeddingStore = defineStore('wedding', {
       {
         place: 'Chiesa di San Gaetano',
         address: 'Via Altinate 12, 35121 Padova PD, Italia',
-        image: '/images/venue-church.svg'
+        image: '/images/venue-church.jpg'
       },
       {
         place: 'Sala Ricevimenti Prato',
         address: 'Via Umberto I 48, 35123 Padova PD, Italia',
-        image: '/images/venue-hall.svg'
+        image: '/images/venue-hall.jpg'
       }
     ],
 
     // Same order as `programme.items` in the content files
     schedule: [
-      { start: '17:00', end: '18:00', image: '/images/venue-church.svg' },
-      { start: '18:30', end: '03:00', image: '/images/venue-hall.svg' }
+      { start: '17:00', end: '18:00', image: '/images/venue-church.jpg' },
+      { start: '18:30', end: '03:00', image: '/images/venue-hall.jpg' }
     ],
 
-    storyPhotos: ['/images/story-1.svg', '/images/story-2.svg', '/images/story-3.svg'],
+    storyPhotos: ['/images/story-1.jpg', '/images/story-2.jpg', '/images/story-3.jpg'],
 
     dressDay: ['/images/dress-day-1.svg', '/images/dress-day-2.svg', '/images/dress-day-3.svg'],
     dressEvening: ['/images/dress-eve-1.svg', '/images/dress-eve-2.svg', '/images/dress-eve-3.svg'],
@@ -74,7 +63,7 @@ export const useWeddingStore = defineStore('wedding', {
         category: '3 ★',
         distanceMin: 6,
         price: '125€',
-        image: '/images/hotel-1.svg',
+        image: '/images/hotel-1.jpg',
         address: 'Via Roma 3, 35122 Padova PD, Italia',
         bookUrl: 'https://example.com/book/santa-giustina'
       },
@@ -83,7 +72,7 @@ export const useWeddingStore = defineStore('wedding', {
         category: '4 ★',
         distanceMin: 9,
         price: '161€',
-        image: '/images/hotel-2.svg',
+        image: '/images/hotel-2.jpg',
         address: 'Via San Francesco 27, 35121 Padova PD, Italia',
         bookUrl: 'https://example.com/book/palazzo-euganeo'
       },
@@ -92,7 +81,7 @@ export const useWeddingStore = defineStore('wedding', {
         category: '2 ★',
         distanceMin: 12,
         price: '89€',
-        image: '/images/hotel-3.svg',
+        image: '/images/hotel-3.jpg',
         address: 'Via Cavour 9, 35137 Padova PD, Italia',
         bookUrl: 'https://example.com/book/prato-della-valle'
       },
@@ -101,7 +90,7 @@ export const useWeddingStore = defineStore('wedding', {
         category: '2 ★',
         distanceMin: 15,
         price: '91€',
-        image: '/images/hotel-4.svg',
+        image: '/images/hotel-4.jpg',
         address: 'Piazzale Stazione 1, 35131 Padova PD, Italia',
         bookUrl: 'https://example.com/book/stazione'
       }
